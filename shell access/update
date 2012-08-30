@@ -1,0 +1,20 @@
+#!/bin/sh
+#  
+# Copyright (C) 2012 Kris Sum <www.switchsystems.co.uk>
+# 
+# This script is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+# This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License. If not, see http://www.gnu.org/licenses/.
+
+set -x
+
+echo -e -n '\033[9]' > /dev/tty0
+echo -e -n '\033[?25l' > /dev/tty0
+
+echo "Copyright (C) 2012 Kris Sum <www.switchsystems.co.uk>" > /dev/tty0
+echo "=====================================================" > /dev/tty0
+echo "This GPL'd script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details." > /dev/tty0
+echo "=====================================================" > /dev/tty0
+
+echo "Spawning getty on tty0" > /dev/tty0
+/sbin/getty 38400 tty0
